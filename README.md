@@ -27,6 +27,7 @@ O sistema é construído sobre as seguintes entidades principais:
 * **João Eduardo Monteiro Cavalcanti**
 * **Francisco Ítalo Machado Dantas**
 * **Júlio Bezerra Coelho**
+* **Ramom de Oliveira Aguiar**
 
 
 ### Cronograma de Entregas
