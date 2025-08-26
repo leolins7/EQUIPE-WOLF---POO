@@ -3,9 +3,11 @@
 
 ### Descrição do Projeto
 
-O ShelfWise é um sistema de gerenciamento de biblioteca desenvolvido em Java com foco em Programação Orientada a Objetos (POO). A aplicação tem como objetivo principal gerenciar o acervo de livros, os membros cadastrados e todas as transações de empréstimo e devolução.
+O ShelfWise é um projeto acadêmico de Programação Orientada a Objetos (POO) desenvolvido para o curso de Análise e Desenvolvimento de Sistemas. Nosso objetivo é criar uma solução completa para o gerenciamento de uma biblioteca, focando em funcionalidades essenciais como o controle do acervo de livros, o cadastro de membros e a automação das transações de empréstimo e devolução. O projeto será construído em Java, aplicando boas práticas de design e um padrão arquitetural que será definido nas próximas etapas.
 
 ### Requisitos
+
+O sistema é fundamentado nas seguintes entidades e requisitos, que servirão de base para a arquitetura:
 
 * Linguagem: Java
 * Abordagem: Programação Orientada a Objetos (POO)
@@ -16,19 +18,18 @@ O ShelfWise é um sistema de gerenciamento de biblioteca desenvolvido em Java co
 
 O sistema é construído sobre as seguintes entidades principais:
 
-* **Livro**: Representa um item no acervo da biblioteca, com atributos como título, autor, ISBN e status (disponível, emprestado).
-* **Membro**: Representa um usuário da biblioteca, com atributos como nome, ID e a lista de livros que alugou.
-* **Empréstimo**: Representa a transação de um livro para um membro, com data de empréstimo e data de devolução prevista.
+* **Livro**: Representa um item do acervo, com atributos como título, autor, ISBN e status de disponibilidade.
+* **Membro**: Representa o usuário da biblioteca, com atributos como nome, ID e um histórico de empréstimos.
+* **Empréstimo**: Representa a transação de um livro para um membro, registrando data, status e os itens da transação.
 
 ### Equipe
 
-* **Leonardo Felipe Demétrio Lins Nascimento** 
-* **Jonas de Lima Neto**
-* **João Eduardo Monteiro Cavalcanti**
 * **Francisco Ítalo Machado Dantas**
+* **João Eduardo Monteiro Cavalcanti**
+* **Jonas de Lima Neto**
 * **Júlio Bezerra Coelho**
+* **Leonardo Felipe Demétrio Lins Nascimento** 
 * **Ramom de Oliveira Aguiar**
-
 
 ### Cronograma de Entregas
 
@@ -47,3 +48,4 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
     * [Link para o Protótipo]
 * **Screencasts:** Link para os vídeos de apresentação do projeto no YouTube.
     * [Link para o Screencast da Entrega 01]
+
