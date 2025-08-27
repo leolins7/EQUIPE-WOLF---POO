@@ -1,0 +1,33 @@
+# Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos do Java
+*.class
+*.jar
+*.war
+*.log
+/bin/
+/build/
+/out/
+*.log
+
+# Ignorar arquivos de IDEs (IntelliJ, Eclipse, VS Code)
+.idea/
+.project
+.classpath
+.settings/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# Ignorar arquivos de dependências
+/lib/
+/target/
+
+# Ignorar arquivos de build
+gradlew
+gradlew.bat
+.gradle/
+/build/
