@@ -42,10 +42,10 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
 
 ### Documentação e Recursos
 
-* **Histórias de Usuário:** Link para o documento com as 7 histórias no formato BDD.
-    * [Link para o Documento]
+** **Histórias dos usuários:** Link para o protótipo da interface de usuário.
+    [* [Documento]](https://docs.google.com/document/d/1QKmTRIPZwUpkjAnV5qHJuFJP7M1U7oL6VVkIEZXyEaM/edit?tab=t.0)
 * **Protótipo Lo-Fi (Figma):** Link para o protótipo da interface de usuário.
-    [* [Link para o Protótipo]](https://www.figma.com/proto/8TUjll3hCDhJth6ovPqqs9/Proto?node-id=1-2&p=f&t=nCocUZmSsx2QcvJk-1&scaling=contain&content-scaling=fixed&page-id=0%3A1)
+    [* [Protótipo]](https://www.figma.com/proto/8TUjll3hCDhJth6ovPqqs9/Proto?node-id=1-2&p=f&t=nCocUZmSsx2QcvJk-1&scaling=contain&content-scaling=fixed&page-id=0%3A1)
 * **Screencasts:** Link para os vídeos de apresentação do projeto no YouTube.
-    [* [Link para o Screencast da Entrega 01]](https://www.youtube.com/watch?v=ZOuNIVcGXiU)
+    [* [Screencast da Entrega 01]](https://www.youtube.com/watch?v=ZOuNIVcGXiU)
 
