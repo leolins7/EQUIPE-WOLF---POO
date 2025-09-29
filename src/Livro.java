@@ -4,6 +4,7 @@ public class Livro {
     private String isbn;
     private boolean disponivel; // Se está na prateleira (true) ou emprestado/reservado (false)
     
+    
     // Construtor
     public Livro(String titulo, String autor, String isbn) {
         this.titulo = titulo;
