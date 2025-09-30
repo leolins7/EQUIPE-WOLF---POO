@@ -36,9 +36,9 @@ O sistema é construído sobre as seguintes entidades principais:
 Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
 
 * **Entrega 01 (26/08 - 29/08):** Kickoff do projeto, definição das histórias de usuário no formato BDD e protótipo Lo-Fi.
-* **Entrega 02 (09/09):** Implementação de no mínimo duas histórias, com persistência em memória.
-* **Entrega 03 (30/09):** Implementação de mais duas histórias e refatoração para arquitetura em camadas com padrões de projeto.
-* **Entrega 04 (23/10):** Implementação de mais três histórias e refatoração para persistência permanente (banco de dados, arquivo, serialização).
+* **Entrega 02 (30/09):** Implementação de no mínimo duas histórias, com persistência em memória.
+* **Entrega 03 (23/10):** Implementação de mais duas histórias e refatoração para arquitetura em camadas com padrões de projeto.
+* **Entrega 04 (17/11):** Implementação de mais três histórias e refatoração para persistência permanente (banco de dados, arquivo, serialização).
 
 ### Documentação e Recursos
 
@@ -47,7 +47,8 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
 * **Protótipo Lo-Fi (Figma):** Link para o protótipo da interface de usuário.
     [* [Protótipo]](https://www.figma.com/proto/8TUjll3hCDhJth6ovPqqs9/Proto?node-id=1-2&p=f&t=nCocUZmSsx2QcvJk-1&scaling=contain&content-scaling=fixed&page-id=0%3A1)
 * **Screencasts:** Link para os vídeos de apresentação do projeto no YouTube.
-    [* [Screencast da Entrega 01]](https://www.youtube.com/watch?v=ZOuNIVcGXiU)
+    [* [Screencast da Entrega 01]](https://www.youtube.com/watch?v=ZOuNIVcGXiU)     [* [Screencast da Entrega 02]](https://www.youtube.com/watch?v=sI7awY6X_TU)
+  
 
 ### ISSUE/BUG Tracker
 
