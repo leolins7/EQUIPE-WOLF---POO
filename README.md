@@ -43,11 +43,12 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
 ### Documentação e Recursos
 
 * **Histórias dos usuários:** Link para o protótipo da interface de usuário.
-    [* [Documento]](https://docs.google.com/document/d/1QKmTRIPZwUpkjAnV5qHJuFJP7M1U7oL6VVkIEZXyEaM/edit?tab=t.0)
+    - [* [Documento]](https://docs.google.com/document/d/1QKmTRIPZwUpkjAnV5qHJuFJP7M1U7oL6VVkIEZXyEaM/edit?tab=t.0)
 * **Protótipo Lo-Fi (Figma):** Link para o protótipo da interface de usuário.
-    [* [Protótipo]](https://www.figma.com/proto/8TUjll3hCDhJth6ovPqqs9/Proto?node-id=1-2&p=f&t=nCocUZmSsx2QcvJk-1&scaling=contain&content-scaling=fixed&page-id=0%3A1)
+    - [* [Protótipo]](https://www.figma.com/proto/8TUjll3hCDhJth6ovPqqs9/Proto?node-id=1-2&p=f&t=nCocUZmSsx2QcvJk-1&scaling=contain&content-scaling=fixed&page-id=0%3A1)
 * **Screencasts:** Link para os vídeos de apresentação do projeto no YouTube.
-    [* [Screencast da Entrega 01]](https://www.youtube.com/watch?v=ZOuNIVcGXiU)     [* [Screencast da Entrega 02]](https://www.youtube.com/watch?v=sI7awY6X_TU)
+    - [* [Screencast da Entrega 01]](https://www.youtube.com/watch?v=ZOuNIVcGXiU)     
+    - [* [Screencast da Entrega 02]](https://www.youtube.com/watch?v=sI7awY6X_TU)
   
 
 ### ISSUE/BUG Tracker
