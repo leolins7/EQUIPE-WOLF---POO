@@ -27,7 +27,6 @@ O sistema é construído sobre as seguintes entidades principais:
 * **Francisco Ítalo Machado Dantas**
 * **João Eduardo Monteiro Cavalcanti**
 * **Jonas de Lima Neto**
-* **Júlio Bezerra Coelho**
 * **Leonardo Felipe Demétrio Lins Nascimento** 
 * **Ramom de Oliveira Aguiar**
 
