@@ -1,16 +1,16 @@
+package br.com.shelfwise.domain;
+
 public class Livro {
     private String titulo;
     private String autor;
     private String isbn;
-    private boolean disponivel; // Se está na prateleira (true) ou emprestado/reservado (false)
-    
-    
-    // Construtor
+    private boolean disponivel;
+
     public Livro(String titulo, String autor, String isbn) {
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;
-        this.disponivel = true; // Por padrão, o livro é adicionado como disponível
+        this.disponivel = true; // Novo livro sempre começa disponível
     }
 
     // Getters
@@ -21,19 +21,23 @@ public class Livro {
     public String getTitulo() {
         return titulo;
     }
+    
+    public String getAutor() {
+        return autor;
+    }
 
     public boolean isDisponivel() {
         return disponivel;
     }
-    
-    // Setters para alteração de status
+
+    // Setter
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
     }
-    
+
     @Override
     public String toString() {
         return String.format("Livro [Título: %s, Autor: %s, ISBN: %s, Status: %s]",
-                             titulo, autor, isbn, disponivel ? "Disponível" : "Emprestado");
+                titulo, autor, isbn, disponivel ? "Disponível" : "Emprestado");
     }
 }

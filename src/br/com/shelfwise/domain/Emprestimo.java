@@ -1,3 +1,5 @@
+package br.com.shelfwise.domain;
+
 import java.time.LocalDate;
 
 public class Emprestimo {
@@ -5,14 +7,12 @@ public class Emprestimo {
     private Membro membro;
     private LocalDate dataEmprestimo;
     private LocalDate dataPrevistaDevolucao;
-    
-    // Construtor
+
     public Emprestimo(Livro livro, Membro membro) {
         this.livro = livro;
         this.membro = membro;
         this.dataEmprestimo = LocalDate.now();
-        // Exemplo: Devolução em 14 dias
-        this.dataPrevistaDevolucao = this.dataEmprestimo.plusDays(14); 
+        this.dataPrevistaDevolucao = this.dataEmprestimo.plusDays(14);
     }
 
     // Getters
@@ -27,10 +27,10 @@ public class Emprestimo {
     public LocalDate getDataEmprestimo() {
         return dataEmprestimo;
     }
-    
+
     @Override
     public String toString() {
         return String.format("Empréstimo [Livro: %s, Membro: %s, Data: %s, Devolução Prevista: %s]",
-                             livro.getTitulo(), membro.getNome(), dataEmprestimo, dataPrevistaDevolucao);
+                livro.getTitulo(), membro.getNome(), dataEmprestimo, dataPrevistaDevolucao);
     }
 }
