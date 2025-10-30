@@ -13,8 +13,7 @@ import java.util.Scanner;
 
 public class Main {
     
-    // Inicialização das camadas
-    // Em uma aplicação real, isso seria feito por um framework (Injeção de Dependência)
+    
     private static final LivroRepository livroRepository = new LivroRepository();
     private static final MembroRepository membroRepository = new MembroRepository();
     private static final EmprestimoRepository emprestimoRepository = new EmprestimoRepository();
