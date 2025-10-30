@@ -48,8 +48,8 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
 * **Screencasts:** Link para os vídeos de apresentação do projeto no YouTube.
     - [* [Screencast da Entrega 01]](https://www.youtube.com/watch?v=ZOuNIVcGXiU)     
     - [* [Screencast da Entrega 02]](https://www.youtube.com/watch?v=sI7awY6X_TU)
-    - [* [Screencast da Entrega 03]](https://www.youtube.com/watch?v=sI7awY6X_TU)
-    - - [* [Screencast da Entrega 03 Testes Automatizados]](https://www.youtube.com/watch?v=sI7awY6X_TU)
+    - [* [Screencast da Entrega 03]](https://youtu.be/Yn3SnhepH4U)
+    - [* [Screencast da Entrega 03 Testes Automatizados]](https://youtu.be/GNe7GJtDsZM)
   
 
 ### ISSUE/BUG Tracker
