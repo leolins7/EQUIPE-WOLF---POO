@@ -48,6 +48,8 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
 * **Screencasts:** Link para os vídeos de apresentação do projeto no YouTube.
     - [* [Screencast da Entrega 01]](https://www.youtube.com/watch?v=ZOuNIVcGXiU)     
     - [* [Screencast da Entrega 02]](https://www.youtube.com/watch?v=sI7awY6X_TU)
+    - [* [Screencast da Entrega 03]](https://www.youtube.com/watch?v=sI7awY6X_TU)
+    - - [* [Screencast da Entrega 03 Testes Automatizados]](https://www.youtube.com/watch?v=sI7awY6X_TU)
   
 
 ### ISSUE/BUG Tracker
@@ -62,6 +64,17 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
 ### ISSUE/BUG Tracker Entrega 03:
 
 <img width="1230" height="322" alt="image" src="https://github.com/user-attachments/assets/c5bd9eb1-ae2f-473a-92d8-60bf7afa9086" />
+
+<img width="961" height="701" alt="image" src="https://github.com/user-attachments/assets/c5213515-cdfc-4ba5-ad1c-6900cdae106a" />
+
+<img width="965" height="769" alt="image" src="https://github.com/user-attachments/assets/60f55c8f-9c91-428d-9978-b46e95de8bf1" />
+
+<img width="934" height="732" alt="image" src="https://github.com/user-attachments/assets/9b21511a-8ba8-460a-9d59-a3d3aef6c697" />
+
+<img width="941" height="772" alt="image" src="https://github.com/user-attachments/assets/4613210f-e47e-407e-bfcc-c9953a690e7a" />
+
+
+
 
 
 
