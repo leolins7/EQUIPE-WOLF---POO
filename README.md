@@ -59,5 +59,10 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
 <img width="969" height="674" alt="image" src="https://github.com/user-attachments/assets/32a2c144-6bb1-437f-9670-927d27365f34" />
 
 
+### ISSUE/BUG Tracker Entrega 03:
+
+<img width="1230" height="322" alt="image" src="https://github.com/user-attachments/assets/c5bd9eb1-ae2f-473a-92d8-60bf7afa9086" />
+
+
 
 
