@@ -50,7 +50,7 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
     - [* [Screencast da Entrega 02]](https://www.youtube.com/watch?v=sI7awY6X_TU)
     - [* [Screencast da Entrega 03]](https://youtu.be/Yn3SnhepH4U)
     - [* [Screencast da Entrega 03 Testes Automatizados]](https://youtu.be/GNe7GJtDsZM)
-  
+
 
 ### ISSUE/BUG Tracker
 
@@ -72,6 +72,34 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
 <img width="934" height="732" alt="image" src="https://github.com/user-attachments/assets/9b21511a-8ba8-460a-9d59-a3d3aef6c697" />
 
 <img width="941" height="772" alt="image" src="https://github.com/user-attachments/assets/4613210f-e47e-407e-bfcc-c9953a690e7a" />
+
+
+## 🚀 Planejamento de Evolução (Trabalho Acadêmico)
+
+Esta seção documenta a pesquisa de arquitetura e hospedagem para a evolução do ShelfWise para um sistema Web.
+
+### 1. Hospedagem Gratuita (Requisito 1)
+Pesquisa de opções para deploy de um MVP (Minimum Viável Product) gratuito:
+- **Frontend (Web):** Vercel ou Netlify.
+- **Backend (API Java):** Render ou Railway.
+- **Banco de Dados:** Neon.tech (PostgreSQL).
+
+### 2. Arquitetura Alvo na Nuvem (Requisito 2)
+Arquitetura sugerida para garantir escalabilidade, segurança e robustez (tráfego baixo a moderado):
+
+```mermaid
+graph TD
+    User[Usuário (Navegador)] -->|"HTTPS"| CDN[CDN / WAF<br/>CloudFront]
+    CDN --> LB[Load Balancer<br/>Distribui Requisições]
+    
+    subgraph "AWS VPC (Rede Privada)"
+        LB --> ASG[Auto Scaling Group<br/>Servidores API ShelfWise]
+        
+        ASG -->|Leitura Rápida| Cache[(Redis<br/>Cache de Livros)]
+        ASG -->|Persistência| DB[(Banco de Dados<br/>PostgreSQL RDS)]
+        
+        ASG -.->|Logs| Monitor[Monitoramento (CloudWatch)]
+    end
 
 
 
