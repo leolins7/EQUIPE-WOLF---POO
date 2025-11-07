@@ -1,4 +1,13 @@
+/**
+ * [DDD] Domain Service
+ * Contém regras de negócio que envolvem múltiplas entidades (Livro e Membro),
+ * como realizar um empréstimo ou devolução.
+ */
+
 package br.com.shelfwise.service;
+
+import java.util.List;
+import java.util.Optional;
 
 import br.com.shelfwise.domain.Emprestimo;
 import br.com.shelfwise.domain.Livro;
@@ -7,9 +16,6 @@ import br.com.shelfwise.exception.ValidacaoException;
 import br.com.shelfwise.repository.EmprestimoRepository;
 import br.com.shelfwise.repository.LivroRepository;
 import br.com.shelfwise.repository.MembroRepository;
-
-import java.util.List;
-import java.util.Optional;
 
 public class BibliotecaService {
 

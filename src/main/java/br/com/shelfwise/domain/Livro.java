@@ -1,3 +1,9 @@
+/**
+ * [DDD] Entity
+ * Entidade que possui ciclo de vida e identidade própria (ISBN).
+ */
+
+
 package br.com.shelfwise.domain;
 
 public class Livro {

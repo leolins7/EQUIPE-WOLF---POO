@@ -1,3 +1,9 @@
+/**
+ * [DDD] Aggregate Root
+ * Entidade que representa o usuário da biblioteca.
+ * Gerencia sua própria lista de empréstimos para garantir consistência.
+ */
+
 package br.com.shelfwise.domain;
 
 import java.util.ArrayList;
