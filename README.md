@@ -89,17 +89,21 @@ Arquitetura sugerida para garantir escalabilidade, segurança e robustez (tráfe
 
 ```mermaid
 graph TD
-    User[Usuário (Navegador)] -->|"HTTPS"| CDN[CDN / WAF<br/>CloudFront]
-    CDN --> LB[Load Balancer<br/>Distribui Requisições]
+    User[Usuario - Navegador] --> HTTPS[Conexao HTTPS]
+    HTTPS --> CDN[CDN / WAF<br>CloudFront]
+    CDN --> LB[Load Balancer<br>Distribui Requisicoes]
     
-    subgraph "AWS VPC (Rede Privada)"
-        LB --> ASG[Auto Scaling Group<br/>Servidores API ShelfWise]
+    subgraph AWS_VPC_Rede_Privada
+        LB --> ASG[Auto Scaling Group<br>Servidores API ShelfWise]
         
-        ASG -->|Leitura Rápida| Cache[(Redis<br/>Cache de Livros)]
-        ASG -->|Persistência| DB[(Banco de Dados<br/>PostgreSQL RDS)]
+        ASG --> Cache[(Redis<br>Cache de Livros)]
+        ASG --> DB[(Banco de Dados<br>PostgreSQL RDS)]
         
-        ASG -.->|Logs| Monitor[Monitoramento (CloudWatch)]
+        ASG -.-> Monitor[Monitoramento CloudWatch]
     end
+
+
+
 
 
 
