@@ -1,3 +1,4 @@
+
 # EQUIPE WOLF - POO
 # ShelfWise
 
@@ -27,8 +28,7 @@ O sistema é construído sobre as seguintes entidades principais:
 * **Francisco Ítalo Machado Dantas**
 * **João Eduardo Monteiro Cavalcanti**
 * **Jonas de Lima Neto**
-* **Leonardo Felipe Demétrio Lins Nascimento** 
-* **Ramom de Oliveira Aguiar**
+* **Leonardo Felipe Demétrio Lins Nascimento** * **Ramom de Oliveira Aguiar**
 
 ### Cronograma de Entregas
 
@@ -50,6 +50,20 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
     - [* [Screencast da Entrega 02]](https://www.youtube.com/watch?v=sI7awY6X_TU)
     - [* [Screencast da Entrega 03]](https://youtu.be/Yn3SnhepH4U)
     - [* [Screencast da Entrega 03 Testes Automatizados]](https://youtu.be/GNe7GJtDsZM)
+    - [* [Screencast da Entrega 04]](https://www.youtube.com/watch?v=SsnKRnAHtgM)
+    - [* [Screencast da Entrega 04 Testes Automatizados]](https://www.youtube.com/watch?v=i5YQfsOWo48)
+
+
+### Refatoração para Persistência Permanente (Entrega 04)
+
+O sistema foi refatorado para usar **Serialização de Objetos Java** como método de persistência permanente.
+
+* **Como funciona:** Agora, todos os dados de livros, membros e empréstimos são salvos automaticamente em arquivos binários (`.dat`) na raiz do diretório do projeto.
+* **Arquivos Gerados:**
+    * `livros.dat`: Armazena a lista de todos os livros do acervo.
+    * `membros.dat`: Armazena a lista de membros cadastrados.
+    * `emprestimos.dat`: Armazena a lista de todos os empréstimos ativos.
+* **Garantia:** Isso garante que os dados persistam entre as execuções do programa. Ao iniciar o sistema, os dados são lidos desses arquivos, e qualquer alteração (como adicionar um livro ou registrar um empréstimo) é salva imediatamente no arquivo correspondente.
 
 
 ### ISSUE/BUG Tracker
@@ -72,6 +86,10 @@ Este projeto será desenvolvido em etapas, conforme o cronograma abaixo:
 <img width="934" height="732" alt="image" src="https://github.com/user-attachments/assets/9b21511a-8ba8-460a-9d59-a3d3aef6c697" />
 
 <img width="941" height="772" alt="image" src="https://github.com/user-attachments/assets/4613210f-e47e-407e-bfcc-c9953a690e7a" />
+
+### ISSUE/BUG Tracker Entrega 04:
+
+
 
 
 ## 🚀 Planejamento de Evolução (Trabalho Acadêmico)
@@ -101,13 +119,3 @@ graph TD
         
         ASG -.-> Monitor[Monitoramento CloudWatch]
     end
-
-
-
-
-
-
-
-
-
-
