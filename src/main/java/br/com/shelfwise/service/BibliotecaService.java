@@ -1,13 +1,15 @@
+// MODIFICADO: src/main/java/br/com/shelfwise/service/BibliotecaService.java
 /**
  * [DDD] Domain Service
  * Contém regras de negócio que envolvem múltiplas entidades (Livro e Membro),
  * como realizar um empréstimo ou devolução.
  */
-
 package br.com.shelfwise.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import br.com.shelfwise.domain.Emprestimo;
 import br.com.shelfwise.domain.Livro;
@@ -123,6 +125,30 @@ public class BibliotecaService {
         membro.removerEmprestimo(isbnLivro);
         emprestimoRepository.remover(emprestimo);
         livro.setDisponivel(true);
+    }
+    
+    // --- História 8: (Admin) Listar Empréstimos Ativos ---
+    public List<Emprestimo> getEmprestimosAtivos() {
+        return emprestimoRepository.listarTodos();
+    }
+    
+    // --- História 9: (Admin) Identificar Empréstimos Atrasados ---
+    public List<Emprestimo> getEmprestimosAtrasados() {
+        LocalDate hoje = LocalDate.now();
+        return emprestimoRepository.listarTodos().stream()
+                .filter(e -> e.getDataPrevistaDevolucao().isBefore(hoje))
+                .collect(Collectors.toList());
+    }
+    
+    // --- História 10: (Membro) Ver Meus Empréstimos ---
+    public List<Emprestimo> getEmprestimosPorMembro(int idMembro) {
+        // Valida se o membro existe
+        membroRepository.buscarPorId(idMembro)
+                .orElseThrow(() -> new ValidacaoException("Membro com ID " + idMembro + " não encontrado."));
+        
+        return emprestimoRepository.listarTodos().stream()
+                .filter(e -> e.getMembro().getId() == idMembro)
+                .collect(Collectors.toList());
     }
     
     // --- Métodos Auxiliares para UI (Status) ---

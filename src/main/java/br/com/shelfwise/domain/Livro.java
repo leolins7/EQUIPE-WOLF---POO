@@ -1,12 +1,16 @@
+// MODIFICADO: src/main/java/br/com/shelfwise/domain/Livro.java
 /**
  * [DDD] Entity
  * Entidade que possui ciclo de vida e identidade própria (ISBN).
  */
-
-
 package br.com.shelfwise.domain;
 
-public class Livro {
+// Adicionado java.io.Serializable
+public class Livro implements java.io.Serializable {
+    
+    // Boa prática para serialização
+    private static final long serialVersionUID = 1L;
+
     private String titulo;
     private String autor;
     private String isbn;

@@ -1,15 +1,20 @@
+// MODIFICADO: src/main/java/br/com/shelfwise/domain/Membro.java
 /**
  * [DDD] Aggregate Root
  * Entidade que representa o usuário da biblioteca.
  * Gerencia sua própria lista de empréstimos para garantir consistência.
  */
-
 package br.com.shelfwise.domain;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Membro {
+// Adicionado java.io.Serializable
+public class Membro implements java.io.Serializable {
+
+    // Boa prática para serialização
+    private static final long serialVersionUID = 1L;
+
     private int id;
     private String nome;
     private String email; // Adicionado para História 2

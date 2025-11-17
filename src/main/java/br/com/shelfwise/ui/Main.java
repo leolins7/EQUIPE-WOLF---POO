@@ -1,5 +1,10 @@
+// MODIFICADO: src/main/java/br/com/shelfwise/ui/Main.java
 package br.com.shelfwise.ui;
 
+import java.util.List;
+import java.util.Scanner;
+
+import br.com.shelfwise.domain.Emprestimo;
 import br.com.shelfwise.domain.Livro;
 import br.com.shelfwise.domain.Membro;
 import br.com.shelfwise.exception.ValidacaoException;
@@ -7,9 +12,6 @@ import br.com.shelfwise.repository.EmprestimoRepository;
 import br.com.shelfwise.repository.LivroRepository;
 import br.com.shelfwise.repository.MembroRepository;
 import br.com.shelfwise.service.BibliotecaService;
-
-import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     
@@ -59,6 +61,8 @@ public class Main {
         System.out.println("3. Gerenciar Livros (Admin - História 6)");
         System.out.println("4. Gerenciar Empréstimos (Admin - História 7)");
         System.out.println("5. Ver Status do Acervo e Membros");
+        System.out.println("6. Ver Meus Empréstimos (Membro - História 10)");
+        System.out.println("7. Relatórios (Admin - Histórias 8 e 9)");
         System.out.println("0. Sair");
         System.out.print("Escolha uma opção: ");
     }
@@ -79,6 +83,12 @@ public class Main {
                 break;
             case 5:
                 menuStatusSistema();
+                break;
+            case 6: // Nova Opção
+                menuMeusEmprestimos();
+                break;
+            case 7: // Nova Opção
+                menuRelatorios();
                 break;
             case 0:
                 // Sair é tratado no loop principal
@@ -230,5 +240,72 @@ public class Main {
             membros.forEach(System.out::println);
         }
         System.out.println("---------------------------------");
+    }
+
+    // --- (NOVO) História 10: Meus Empréstimos ---
+    private static void menuMeusEmprestimos() {
+        System.out.println("\n--- Meus Empréstimos (Área do Membro) ---");
+        System.out.print("Por favor, informe seu ID de Membro: ");
+        
+        if (scanner.hasNextInt()) {
+            int idMembro = scanner.nextInt();
+            scanner.nextLine();
+            
+            List<Emprestimo> meusEmprestimos = bibliotecaService.getEmprestimosPorMembro(idMembro);
+            
+            if (meusEmprestimos.isEmpty()) {
+                System.out.println("Você não possui empréstimos ativos no momento.");
+            } else {
+                System.out.println("Você possui " + meusEmprestimos.size() + " empréstimo(s) ativo(s):");
+                meusEmprestimos.forEach(System.out::println);
+            }
+        } else {
+            System.out.println("ERRO: ID do Membro deve ser um número.");
+            scanner.nextLine();
+        }
+    }
+    
+    // --- (NOVO) Histórias 8 e 9: Relatórios Admin ---
+    private static void menuRelatorios() {
+        int subOpcao = -1;
+        while (subOpcao != 0) {
+            System.out.println("\n--- Relatórios (Admin) ---");
+            System.out.println("1. Listar TODOS os Empréstimos Ativos (História 8)");
+            System.out.println("2. Listar Empréstimos ATRASADOS (História 9)");
+            System.out.println("0. Voltar ao Menu Principal");
+            System.out.print("Escolha uma opção: ");
+            
+            if (scanner.hasNextInt()) {
+                subOpcao = scanner.nextInt();
+                scanner.nextLine();
+                switch (subOpcao) {
+                    case 1: // H8: Listar Ativos
+                        List<Emprestimo> ativos = bibliotecaService.getEmprestimosAtivos();
+                        if (ativos.isEmpty()) {
+                            System.out.println("Não há nenhum empréstimo ativo no sistema.");
+                        } else {
+                            System.out.println("Total de Empréstimos Ativos: " + ativos.size());
+                            ativos.forEach(System.out::println);
+                        }
+                        break;
+                    case 2: // H9: Listar Atrasados
+                        List<Emprestimo> atrasados = bibliotecaService.getEmprestimosAtrasados();
+                        if (atrasados.isEmpty()) {
+                            System.out.println("Não há empréstimos com devolução atrasada.");
+                        } else {
+                            System.out.println("Total de Empréstimos Atrasados: " + atrasados.size());
+                            atrasados.forEach(System.out::println);
+                        }
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        System.out.println("Opção inválida.");
+                }
+            } else {
+                System.out.println("ERRO: Entrada inválida. Por favor, digite um número.");
+                scanner.nextLine();
+            }
+        }
     }
 }

@@ -1,5 +1,7 @@
+// MODIFICADO: src/test/java/br/com/shelfwise/service/BibliotecaServiceTest.java
 package br.com.shelfwise.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +23,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import br.com.shelfwise.domain.Emprestimo;
 import br.com.shelfwise.domain.Livro;
 import br.com.shelfwise.domain.Membro;
 import br.com.shelfwise.exception.ValidacaoException;
@@ -48,12 +51,22 @@ class BibliotecaServiceTest {
 
     private Livro livroMock;
     private Membro membroMock;
+    private Emprestimo emprestimoEmDiaMock;
+    private Emprestimo emprestimoAtrasadoMock;
 
     @BeforeEach
     void setUp() {
         // Configuração padrão para alguns mocks
         livroMock = new Livro("Java Efetivo", "Joshua Bloch", "123");
         membroMock = new Membro(1, "Ana Silva", "ana.silva@cesar.school", "senha123");
+        
+        // Mocks para testes de Histórias 8, 9, 10
+        // Usando o construtor de teste do Emprestimo para forçar as datas
+        emprestimoEmDiaMock = new Emprestimo(livroMock, membroMock, LocalDate.now().minusDays(5)); // Vence em 9 dias
+        
+        Livro livroMock2 = new Livro("Código Limpo", "Robert Martin", "456");
+        Membro membroMock2 = new Membro(2, "Bruno Souza", "bruno.souza@cesar.school", "senha456");
+        emprestimoAtrasadoMock = new Emprestimo(livroMock2, membroMock2, LocalDate.now().minusDays(15)); // Venceu ontem
     }
 
     // --- História 1: Pesquisa de Livros ---
@@ -207,5 +220,66 @@ class BibliotecaServiceTest {
         
         assertTrue(exception.getMessage().contains("não está disponível para empréstimo"));
         verify(emprestimoRepository, never()).adicionar(any());
+    }
+    
+    // --- História 8: Listar Empréstimos Ativos ---
+    @Test
+    @DisplayName("H8: Deve retornar todos os empréstimos ativos")
+    void getEmprestimosAtivos_DeveRetornarTodos() {
+        // Arrange
+        when(emprestimoRepository.listarTodos()).thenReturn(List.of(emprestimoEmDiaMock, emprestimoAtrasadoMock));
+        
+        // Act
+        List<Emprestimo> resultados = bibliotecaService.getEmprestimosAtivos();
+        
+        // Assert
+        assertEquals(2, resultados.size());
+    }
+    
+    // --- História 9: Listar Empréstimos Atrasados ---
+    @Test
+    @DisplayName("H9: Deve retornar apenas empréstimos atrasados")
+    void getEmprestimosAtrasados_DeveFiltrarCorretamente() {
+        // Arrange
+        when(emprestimoRepository.listarTodos()).thenReturn(List.of(emprestimoEmDiaMock, emprestimoAtrasadoMock));
+        
+        // Act
+        List<Emprestimo> resultados = bibliotecaService.getEmprestimosAtrasados();
+        
+        // Assert
+        assertEquals(1, resultados.size());
+        assertEquals(emprestimoAtrasadoMock, resultados.get(0));
+    }
+    
+    // --- História 10: Listar Empréstimos por Membro ---
+    @Test
+    @DisplayName("H10: Deve retornar empréstimos de um membro específico")
+    void getEmprestimosPorMembro_DeveRetornarCorretamente() {
+        // Arrange
+        int idMembro = membroMock.getId();
+        when(membroRepository.buscarPorId(idMembro)).thenReturn(Optional.of(membroMock));
+        when(emprestimoRepository.listarTodos()).thenReturn(List.of(emprestimoEmDiaMock, emprestimoAtrasadoMock));
+        
+        // Act
+        List<Emprestimo> resultados = bibliotecaService.getEmprestimosPorMembro(idMembro);
+        
+        // Assert
+        assertEquals(1, resultados.size());
+        assertEquals(emprestimoEmDiaMock, resultados.get(0));
+    }
+    
+    @Test
+    @DisplayName("H10: Deve lançar exceção se membro não existir")
+    void getEmprestimosPorMembro_DeveLancarExcecao_QuandoMembroNaoEncontrado() {
+        // Arrange
+        int idMembroInexistente = 999;
+        when(membroRepository.buscarPorId(idMembroInexistente)).thenReturn(Optional.empty());
+        
+        // Act & Assert
+        ValidacaoException exception = assertThrows(ValidacaoException.class, () -> {
+            bibliotecaService.getEmprestimosPorMembro(idMembroInexistente);
+        });
+        
+        assertEquals("Membro com ID 999 não encontrado.", exception.getMessage());
     }
 }
