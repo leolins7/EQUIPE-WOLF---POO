@@ -89,7 +89,7 @@ O sistema foi refatorado para usar **Serialização de Objetos Java** como méto
 
 ### ISSUE/BUG Tracker Entrega 04:
 
-
+<img width="1228" height="315" alt="image" src="https://github.com/user-attachments/assets/1c31e5b0-c3d3-4047-820d-9a558adec7e0" />
 
 
 ## 🚀 Planejamento de Evolução (Trabalho Acadêmico)
