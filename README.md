@@ -92,6 +92,83 @@ O sistema foi refatorado para usar **Serialização de Objetos Java** como méto
 <img width="1228" height="315" alt="image" src="https://github.com/user-attachments/assets/1c31e5b0-c3d3-4047-820d-9a558adec7e0" />
 
 
+## 🚀 Como Executar o Projeto
+
+Esta seção guia você na montagem do ambiente e execução da aplicação ShelfWise.
+
+### Pré-requisitos
+
+Para compilar e executar o projeto localmente, você precisará ter instalado:
+
+  * **Git:** Para clonar o repositório.
+  * **Java JDK 17:** O projeto está configurado para usar o Java 17.
+  * **Apache Maven 3.8+:** Para gerenciamento de dependências e build da aplicação.
+  * **(Opcional) Docker:** Para executar a aplicação em um contêiner.
+
+-----
+
+### Opção 1: Executando Localmente (Via Maven)
+
+Este é o método padrão para desenvolvimento e teste.
+
+1.  **Clone o repositório:**
+
+    ```bash
+    git clone https://github.com/leolins7/equipe-wolf---poo.git
+    cd equipe-wolf---poo
+    ```
+
+2.  **Compile o projeto e gere o `.jar`:**
+    Este comando irá compilar o código, rodar os testes e empacotar a aplicação em um arquivo `.jar` executável dentro da pasta `target/`.
+
+    ```bash
+    mvn clean package
+    ```
+
+3.  **Execute a aplicação:**
+    Após o build, execute o arquivo `.jar` gerado.
+
+    ```bash
+    java -jar target/equipewolf-poo-1.0-SNAPSHOT.jar
+    ```
+
+O menu principal da aplicação aparecerá no seu terminal.
+
+-----
+
+### Opção 2: Executando com Docker (Recomendado para Simplicidade)
+
+Se você possui Docker, pode executar a aplicação sem se preocupar em instalar o Java ou Maven na sua máquina, pois o `Dockerfile` cuida de tudo.
+
+1.  **Construa a imagem Docker:**
+    Na raiz do projeto (onde está o `Dockerfile`), execute:
+
+    ```bash
+    docker build -t shelfwise .
+    ```
+
+2.  **Execute o contêiner:**
+    Use `-it` para rodar em modo interativo, permitindo que você use o menu do console:
+
+    ```bash
+    docker run -it shelfwise
+    ```
+
+-----
+
+### Executando os Testes Automatizados
+
+Para rodar apenas a suíte de testes unitários (JUnit/Mockito), utilize o comando Maven:
+
+```bash
+mvn test
+```
+
+### Sobre a Persistência de Dados
+
+Ao executar a aplicação, serão criados arquivos (`livros.dat`, `membros.dat`, `emprestimos.dat`) na raiz do diretório. Este é o comportamento esperado, pois o sistema utiliza serialização de objetos para persistência permanente.
+
+
 ## 🚀 Planejamento de Evolução (Trabalho Acadêmico)
 
 Esta seção documenta a pesquisa de arquitetura e hospedagem para a evolução do ShelfWise para um sistema Web.
